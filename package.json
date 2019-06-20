@@ -1,0 +1,18 @@
+{
+  "name": "typescript-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "ts": "node_modules/.bin/ts-node -r tsconfig-paths/register"
+  },
+  "author": "Justin Siebert",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "8.9.1",
+    "tsconfig-paths-webpack-plugin": "3.2.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}
