@@ -1,7 +1,7 @@
 // Basic Types
 let firstName: string = 'Justin';
 let theAnswer: number = 42;
-let knownStars: bigint = 1000000000000000000000n; // Support for the new ESNEXT bigint with the correct config options May need transpiling to get working
+let knownStars: bigint = 1000000000000000000000n; // Support for the new ESNEXT bigint with the correct config options. Need Chrome or NodeJS 10.4 to use.
 let isValid: boolean = false;
 
 // We can have arrays
@@ -13,13 +13,13 @@ prime.push(17);
 
 // We can even type an array to make them act more like a tuple
 let response: [boolean, string] = [true, 'a']
-// response = ['string', false]; Error: not same format
+// response = ['string', false]; // Error: not same format
 
 // Want to ensure your tuple is not modified? Give it a readonly prefix.
 const answer: readonly [boolean, string] = [false, 'b']
 // answer[0] = true; // Error: readonly so we can not change it
 
-// A type that will come across is any. It is typically evil and should be avoid unless absolutely necessary.
+// A type that will come across is any. It is typically evil and should be avoided unless absolutely necessary.
 // It basically makes the type entirely untyped.
 let value: any = 7;
 value.push('test'); // This does not fail the compiler but it will fail in the runtime.
@@ -43,7 +43,7 @@ unknownValue = ['test']
 // unknownValue.push('item'); // Error do not know what type unknown is
 
 /// Next we got null, undefined, and void. I think they behave largely how people expect them so I will not go into
-// detail. By default values declared with let will be undefined until you assign something but you can change them
+// detail. By default values declared with let will be undefined until you assign something but you can't change them
 // back to undefined.
 let person: string;
 // const person2: string = person; // Fails since person is undefined.

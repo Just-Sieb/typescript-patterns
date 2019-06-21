@@ -61,7 +61,7 @@ const enum Direction {
 console.log(`The value of Direction.UP is ${Direction.UP}`);
 
 // Since they go away after compilation you can not iterate over them
-// const methodValues = Object.values(HttpMethod);
+const methodValues = Object.values(HttpMethod);
 // const directionValues = Object.values(Direction); // Fails to compile when uncommented
 
 // For the most part I would suggest avoiding const enums and just using enums.

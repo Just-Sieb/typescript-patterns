@@ -9,7 +9,7 @@ interface User {
     phone_number?: string, // Types can be optional
 
     // You can declare more advanced types like functions
-    getFullName: () => string;
+    getFullName(): string;
 }
 
 const user: User = {
@@ -17,7 +17,7 @@ const user: User = {
     username: 'frank.smith',
     first_name: 'Frank',
     last_name: 'Smith',
-    getFullName: function() { return `${this.first_name} ${this.last_name}` },
+    getFullName() { return `${this.first_name} ${this.last_name}` },
 }
 
 // user.id = 9; // Fails because you can not change a readonly value
@@ -57,7 +57,7 @@ const maybeUser = {
     username: 'test1',
     first_name: 'Judy',
     last_name: 'Dent',
-    getFullName: function() { return `${this.first_name} ${this.last_name}` },
+    getFullName() { return `${this.first_name} ${this.last_name}` },
 
     // This value is not defined on the object.
     unknown_item: 'item',
@@ -74,12 +74,12 @@ const otherUser: User = {
     username: 'test2',
     first_name: 'Judy 2',
     last_name: 'Dent 2',
-    getFullName: function() { return `${this.first_name} ${this.last_name}` },
+    getFullName() { return `${this.first_name} ${this.last_name}` },
 
     // This value is not defined on the object. Will error out here.
     // unknown_item: 'item',
 
-// We can explictly cast to the interface if this is needed.
+// We can explicitly cast to the interface if this is needed.
 } // as any;
 
 // One of the common uses of objects is to define a specific type to a particular key of an object. In TypeScript you
@@ -117,7 +117,7 @@ let adminUser: AdminUser = {
     username: 'test3',
     first_name: 'Admin',
     last_name: 'User',
-    getFullName: function() { return `${this.first_name} ${this.last_name}` },
-    privileges: [],
+    getFullName() { return `${this.first_name} ${this.last_name}` },
+    privileges: [Privilege.ADMIN, Privilege.BILLING],
 }
 

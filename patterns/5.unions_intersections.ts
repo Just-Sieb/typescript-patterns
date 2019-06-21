@@ -26,6 +26,7 @@ function getDiameter(shape: Shape) {
 
 getDiameter({ radius: 2 });
 getDiameter({ x: 1, y: 7 });
+// getDiameter({ notShape: true }); // Error: is not in the shape union type.
 
 // We can also create user defined type guard function. The return type is parameter name is type
 function isRectangle(shape: any): shape is Rectangle {
@@ -58,7 +59,7 @@ type Animal =
 function tellAnimalFact(animal: Animal) {
     switch (animal.kind) {
         case 'dog':
-            console.log(`Dog's are Man's best friend: ${animal.isMansBestFriend}`);
+            console.log(`Dogs are Man's best friend: ${animal.isMansBestFriend}`);
             break;
         case 'fish':
             console.log(`Fish can swim ${animal.swimSpeed} mph`);
@@ -69,8 +70,8 @@ function tellAnimalFact(animal: Animal) {
 // TypeScript also support intersection type. Intersection contains all values of the combined interfaces
 
 type FishDogHybrid =
-    & Omit<Fish, "kind">
-    & Omit<Dog, "kind">
+    & Omit<Fish, 'kind'>
+    & Omit<Dog, 'kind'>
     & { kind: 'fish_dog' };
 
 let fishDog: FishDogHybrid = {
